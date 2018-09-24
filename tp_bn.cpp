@@ -7,22 +7,28 @@ void Terrain(int taille1, int taille2)
 {
     int tableau[taille1][taille2];
     int i,j;
+    
+    //eau
+    int x;
+    x = 0;
+    
+    //pointeur 
+    int *p;
+    p = &x;
+    
     for(i=0 ; i<taille1 ; i++)
     {
-        for(j=0 ; i<taille2; j++)
+        for(j=0 ; j<taille2; j++)
         {
-            printf("%d", tableau[i][j] = {0});
+            printf("%d", *p);
         }
     }
-    
 }
 
 int main()
 {
  int taille1, taille2;
 //MENU
-
-gotoxy(10,10);
 	
 	printf("\n\t\t Bienvenue dans la bataille navale !");
     printf("\n\t\t ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
