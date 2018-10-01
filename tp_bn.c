@@ -51,13 +51,13 @@ void Terrain( int tab[9][9], int taille1 )
     
 }
 
-void Bateaux(int tab, int bateau1x, int bateau1y, int bateau11x, int bateau11y, int bateau2x, int bateau2y, int bateau22x, int bateau22y, int bateau3x, int bateau3y, int bateau33x, int bateau33y)
+void Bateaux( int bateau1x, int bateau1y, int bateau11x, int bateau11y, int bateau2x, int bateau2y, int bateau22x, int bateau22y, int bateau3x, int bateau3y, int bateau33x, int bateau33y)
 {
 	
 	printf("Donner la position de la tete du bateau 1 ( 2 cases ) : ");
-	scanf("%d,%d", & tab[bateau1x][bateau1y]);
+	scanf("%d", & bateau1x );
     printf("Donner la position de la fin du bateau 1 ( 2 cases ) : ");
-    scanf("%d,%d", & tab[bateau11x][bateau11y]);
+	scanf("%d", & bateau1y );
     
     printf("Donner la position de la tete du bateau 2 ( 3 cases ) : ");
 	scanf("%d,%d", & tab[bateau2x][bateau2y]);
@@ -75,7 +75,7 @@ void Bateaux(int tab, int bateau1x, int bateau1y, int bateau11x, int bateau11y, 
     
 }
 
-void Bateaux_ennemis(bateau_e1, bateau_e11, bateau_e2, bateau_e22, bateau_e3, bateau_e33)
+void Bateaux_ennemis( int bateau_e1, int bateau_e11, int bateau_e2, int bateau_e22, int bateau_e3, int bateau_e33)
 {
 	printf("Chargement de l'ordinateur' .");
     Sleep(300);
@@ -135,9 +135,9 @@ int main()
                 
                 int taille1 = 8;
                 
-                Bateaux(tab, bateau1x, bateau1y, bateau11x, bateau11y, bateau2x, bateau2y, bateau22x, bateau22y, bateau3x, bateau3y, bateau33x, bateau33y);
+                Bateaux( bateau1x, bateau1y, bateau11x, bateau11y, bateau2x, bateau2y, bateau22x, bateau22y, bateau3x, bateau3y, bateau33x, bateau33y );
                 
-                Terrain(tab, taille1);
+                Terrain( taille1 );
                 
                 
             break; 
