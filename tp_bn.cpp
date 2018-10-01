@@ -4,55 +4,51 @@
 #include <time.h>
 
 void Terrain(int taille1)
-{
+{	
+	// PARTIE AFFICHAGE [ PA ]
+
+	int tab[10][10]; // Initialisation du tableau
+    int i, j;
+    
+    // PARTIE ALLOCATION MEMOIRE [ PM ]
+    
+    // [ PM ]
+    
 	int **tableau;
 	
 	tableau = (int**)malloc(sizeof(int*) * taille1);
     
-    int(i);
-	    for(i=0 ; i<taille1 ; i++)
-	    {
-	        tableau[i] = (int*)malloc(sizeof(int) * taille1);
-	    }
+	for(i=0 ; i<taille1 ; i++)
+	{
+	    tableau[i] = (int*)malloc(sizeof(int) * taille1);
+	}
      
     for(i=0 ; i<taille1 ; i++)
     {
         free(tableau[i]);
     }
     free(tableau);
-}
 
-/* AFFICHER LE TERRAIN
-#include <stdio.h>
-#include <stdlib.h>
-
-int main()
-{
-    int tableau[10][10]; // Initialisation du tableau
-    int i, j;
+	// [ PA ]
     
-    
-    for (i=0; i<10; i++) // Remplissage du tableau
+    for ( i = 0 ; i < taille1 ; i++ ) // Remplissage du tableau
     {
-        for (j=0; j<10; j++)
+        for ( j = 0 ; j < taille1 ; j++ )
         {
-            tableau[i][j]=0;
+            tab[i][j]=0;
         }
     }
     
-    
-    for (i=0; i<10; i++) // Écriture du tableau sur la console
+    for ( i = 0 ; i < taille1 ; i++ ) // Écriture du tableau sur la console
     {
-        for (j=0; j<10; j++)
+        for ( j = 0 ; j < taille1 ; j++ )
         {
-            printf("%d\t", tableau[i][j]);
+            printf("%d\t", tab[i][j]);
         }
         printf("\n");
     }
-    
-    return EXIT_SUCCESS;
+
 }
-*/
 
 
 int main()
