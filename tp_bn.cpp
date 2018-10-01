@@ -22,6 +22,37 @@ void Terrain(int taille1)
     free(tableau);
 }
 
+/* AFFICHER LE TERRAIN
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int tableau[10][10]; // Initialisation du tableau
+    int i, j;
+    
+    
+    for (i=0; i<10; i++) // Remplissage du tableau
+    {
+        for (j=0; j<10; j++)
+        {
+            tableau[i][j]=0;
+        }
+    }
+    
+    
+    for (i=0; i<10; i++) // Écriture du tableau sur la console
+    {
+        for (j=0; j<10; j++)
+        {
+            printf("%d\t", tableau[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return EXIT_SUCCESS;
+}
+*/
 
 
 int main()
