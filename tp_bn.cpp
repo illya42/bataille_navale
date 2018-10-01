@@ -3,31 +3,30 @@
 #include "conio.c"
 #include <time.h>
 
-void Terrain(int taille1, int taille2)
+void Terrain(int taille1)
 {
-    int tableau[taille1][taille2];
-    int i,j;
+	int **tableau;
+	
+	tableau = (int**)malloc(sizeof(int*) * taille1);
     
-    //eau
-    int x;
-    x = 0;
-    
-    //pointeur 
-    int *p;
-    p = &x;
-    
+    int(i);
+	    for(i=0 ; i<taille1 ; i++)
+	    {
+	        tableau[i] = (int*)malloc(sizeof(int) * taille1);
+	    }
+     
     for(i=0 ; i<taille1 ; i++)
     {
-        for(j=0 ; j<taille2; j++)
-        {
-            printf("%d", *p);
-        }
+        free(tableau[i]);
     }
+    free(tableau);
 }
+
+
 
 int main()
 {
- int taille1, taille2;
+ int taille1;
 //MENU
 	
 	printf("\n\t\t Bienvenue dans la bataille navale !");
@@ -59,10 +58,9 @@ int main()
                 Sleep(300);
                 system("cls");
                 
-                int taille1 = 10;
-				int taille2 = 10;
+                int taille1 = 9;
                 
-                Terrain(taille1, taille2);
+                Terrain(taille1);
             break; 
                 
         }
