@@ -3,7 +3,7 @@
 #include "conio.c"
 #include <time.h>
 
-void Terrain(int taille1)
+void Terrain( int tab[9][9], int taille1 )
 {	
 	// PARTIE AFFICHAGE [ PA ]
 
@@ -13,7 +13,7 @@ void Terrain(int taille1)
     
     // [ PM ]
     
-    int tab[9][9];
+
     
     int *tableau = & tab[9][9];
    
@@ -51,7 +51,7 @@ void Terrain(int taille1)
     
 }
 
-void Bateaux(int tab[9][9], int bateau1x, int bateau1y, int bateau11x, int bateau11y, int bateau2x, int bateau2y, int bateau22x, int bateau22y, int bateau3x, int bateau3y, int bateau33x, int bateau33y)
+void Bateaux(int tab, int bateau1x, int bateau1y, int bateau11x, int bateau11y, int bateau2x, int bateau2y, int bateau22x, int bateau22y, int bateau3x, int bateau3y, int bateau33x, int bateau33y)
 {
 	
 	printf("Donner la position de la tete du bateau 1 ( 2 cases ) : ");
@@ -72,6 +72,7 @@ void Bateaux(int tab[9][9], int bateau1x, int bateau1y, int bateau11x, int batea
     system("cls");
     printf("La partie peut commencée !");
     system("cls");
+    
 }
 
 void Bateaux_ennemis(bateau_e1, bateau_e11, bateau_e2, bateau_e22, bateau_e3, bateau_e33)
@@ -97,7 +98,10 @@ int main()
 {
  int taille1;
  
- int bateau1, bateau11, bateau2, bateau22, bateau3, bateau33, bateau_e1, bateau_e11, bateau_e2, bateau_e22, bateau_e3, bateau_e33;
+ int tab[9][9];
+ 
+ int bateau1x, bateau1y, bateau11x, bateau11y, bateau2x, bateau2y, bateau22x, bateau22y, bateau3x, bateau3y, bateau33x, bateau33y;
+	int bateau_e1, bateau_e11, bateau_e2, bateau_e22, bateau_e3, bateau_e33;
 //MENU
 	
 	printf("\n\t\t Bienvenue dans la bataille navale !");
@@ -131,9 +135,9 @@ int main()
                 
                 int taille1 = 8;
                 
-                Bateaux(tab[9][9], bateau1x, bateau1y, bateau11x, bateau11y, bateau2x, bateau2y, bateau22x, bateau22y, bateau3x, bateau3y, bateau33x, bateau33y);
+                Bateaux(tab, bateau1x, bateau1y, bateau11x, bateau11y, bateau2x, bateau2y, bateau22x, bateau22y, bateau3x, bateau3y, bateau33x, bateau33y);
                 
-                Terrain(taille1);
+                Terrain(tab, taille1);
                 
                 
             break; 
