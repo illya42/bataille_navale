@@ -13,9 +13,9 @@ void Terrain(int taille1)
     
     // [ PM ]
     
-    int tab[10][10];
+    int tab[9][9];
     
-    int *tableau = & tab[10][10];
+    int *tableau = & tab[9][9];
    
 	tableau = (int*)malloc(sizeof(int) * taille1);
     /*
@@ -36,8 +36,8 @@ void Terrain(int taille1)
     
     for ( i = 0 ; i <= taille1 ; i++ )
     {
-			tab[i+1][0] = i;
-			tab[0][i+1] = i;
+			tab[i][0] = i;
+			tab[0][i] = i;
 	}
     
     for ( i = 0 ; i <= taille1 ; i++ ) // Écriture du tableau sur la console
@@ -51,10 +51,52 @@ void Terrain(int taille1)
     
 }
 
+void Bateaux(bateau1, bateau11, bateau2, bateau22, bateau3, bateau33)
+{
+	
+	printf("Donner la position de la tete du bateau 1 ( 2 cases ) : ");
+	scanf("%d", & bateau1 );
+    printf("Donner la position de la fin du bateau 1 ( 2 cases ) : ");
+    scanf("%d", & bateau11 );
+    
+    printf("Donner la position de la tete du bateau 2 ( 3 cases ) : ");
+	scanf("%d", & bateau2 );
+    printf("Donner la position de la fin du bateau 2 ( 3 cases ) : ");
+    scanf("%d", & bateau22 );
+    
+    printf("Donner la position de la tete du bateau 3 ( 4 cases ) : ");
+	scanf("%d", & bateau3 );
+    printf("Donner la position de la fin du bateau 3 ( 4 cases ) : ");
+    scanf("%d", & bateau33 );
+    
+	printf("Chargement de l'ordinateur' .");
+    Sleep(300);
+    system("cls");
+    printf("Chargement de l'ordinateur' ..");
+    Sleep(300);
+    system("cls");
+    printf("Chargement de l'ordinateur' ...");
+    Sleep(300);
+	
+	int bateau_e1 = (int)(rand() / (double)RAND_MAX * (N - 1));
+    int bateau_e11 = (int)(rand() / (double)RAND_MAX * (N - 1));
+    int bateau_e2 = (int)(rand() / (double)RAND_MAX * (N - 1));
+    int bateau_e22 = (int)(rand() / (double)RAND_MAX * (N - 1));
+    int bateau_e3 = (int)(rand() / (double)RAND_MAX * (N - 1));
+    int bateau_e33 = (int)(rand() / (double)RAND_MAX * (N - 1));
+    
+    system("cls");
+    printf("La partie peut commencée !");
+    system("cls");
+    
+    
+}
 
 int main()
 {
  int taille1;
+ 
+ int bateau1, bateau11, bateau2, bateau22, bateau3, bateau33;
 //MENU
 	
 	printf("\n\t\t Bienvenue dans la bataille navale !");
@@ -86,9 +128,13 @@ int main()
                 Sleep(300);
                 system("cls");
                 
-                int taille1 = 9;
+                int taille1 = 8;
+                
+                Bateaux();
                 
                 Terrain(taille1);
+                
+                
             break; 
                 
         }
