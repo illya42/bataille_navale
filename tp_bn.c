@@ -51,24 +51,31 @@ void Terrain(int taille1)
     
 }
 
-void Bateaux(bateau1, bateau11, bateau2, bateau22, bateau3, bateau33)
+void Bateaux(int tab[9][9], int bateau1x, int bateau1y, int bateau11x, int bateau11y, int bateau2x, int bateau2y, int bateau22x, int bateau22y, int bateau3x, int bateau3y, int bateau33x, int bateau33y)
 {
 	
 	printf("Donner la position de la tete du bateau 1 ( 2 cases ) : ");
-	scanf("%d", & bateau1 );
+	scanf("%d,%d", & tab[bateau1x][bateau1y]);
     printf("Donner la position de la fin du bateau 1 ( 2 cases ) : ");
-    scanf("%d", & bateau11 );
+    scanf("%d,%d", & tab[bateau11x][bateau11y]);
     
     printf("Donner la position de la tete du bateau 2 ( 3 cases ) : ");
-	scanf("%d", & bateau2 );
+	scanf("%d,%d", & tab[bateau2x][bateau2y]);
     printf("Donner la position de la fin du bateau 2 ( 3 cases ) : ");
-    scanf("%d", & bateau22 );
+    scanf("%d,%d", & tab[bateau22x][bateau22y]);
     
     printf("Donner la position de la tete du bateau 3 ( 4 cases ) : ");
-	scanf("%d", & bateau3 );
+	scanf("%d,%d", & tab[bateau3x][bateau3y]);
     printf("Donner la position de la fin du bateau 3 ( 4 cases ) : ");
-    scanf("%d", & bateau33 );
+    scanf("%d,%d", & tab[bateau33x][bateau33y]);
     
+    system("cls");
+    printf("La partie peut commencée !");
+    system("cls");
+}
+
+void Bateaux_ennemis(bateau_e1, bateau_e11, bateau_e2, bateau_e22, bateau_e3, bateau_e33)
+{
 	printf("Chargement de l'ordinateur' .");
     Sleep(300);
     system("cls");
@@ -78,25 +85,19 @@ void Bateaux(bateau1, bateau11, bateau2, bateau22, bateau3, bateau33)
     printf("Chargement de l'ordinateur' ...");
     Sleep(300);
 	
-	int bateau_e1 = (int)(rand() / (double)RAND_MAX * (N - 1));
-    int bateau_e11 = (int)(rand() / (double)RAND_MAX * (N - 1));
-    int bateau_e2 = (int)(rand() / (double)RAND_MAX * (N - 1));
-    int bateau_e22 = (int)(rand() / (double)RAND_MAX * (N - 1));
-    int bateau_e3 = (int)(rand() / (double)RAND_MAX * (N - 1));
-    int bateau_e33 = (int)(rand() / (double)RAND_MAX * (N - 1));
-    
-    system("cls");
-    printf("La partie peut commencée !");
-    system("cls");
-    
-    
+	bateau_e1 = 	2;
+    bateau_e11 = 	(int)(rand()%8);
+    bateau_e2 = 	4;
+    bateau_e22 = 	(int)(rand()%8);
+    bateau_e3 = 	7;
+    bateau_e33 = 	(int)(rand()%8);
 }
 
 int main()
 {
  int taille1;
  
- int bateau1, bateau11, bateau2, bateau22, bateau3, bateau33;
+ int bateau1, bateau11, bateau2, bateau22, bateau3, bateau33, bateau_e1, bateau_e11, bateau_e2, bateau_e22, bateau_e3, bateau_e33;
 //MENU
 	
 	printf("\n\t\t Bienvenue dans la bataille navale !");
@@ -130,7 +131,7 @@ int main()
                 
                 int taille1 = 8;
                 
-                Bateaux();
+                Bateaux(tab[9][9], bateau1x, bateau1y, bateau11x, bateau11y, bateau2x, bateau2y, bateau22x, bateau22y, bateau3x, bateau3y, bateau33x, bateau33y);
                 
                 Terrain(taille1);
                 
