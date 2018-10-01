@@ -12,7 +12,7 @@ reste à faire :
 
 [5*] afficher un second tableau "ennemi" avec marqué "touché / raté / coulé"
 
-[6*] faire 2 niveaux sup ( 8*8 , 16*16, 18*18 ) ( je sais plus c'est quoi les dimensions du dernier )
+[6*] faire 2 niveaux sup ( 8x8 , 16x16, 18x18 ) ( je sais plus c'est quoi les dimensions du dernier )
 
 et puis voila je crois
 
